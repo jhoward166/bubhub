@@ -3,7 +3,7 @@
 
 %h1 Register with Bikeshare
 
-= form_tag register_new_user_page_path, :method => :post do
+= form_tag register_page_path, :method => :get do
 
   = label :user, :firstName, 'First Name'
   = text_field :user, :firstName
