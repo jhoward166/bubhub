@@ -11,5 +11,9 @@ class UserController < ApplicationController
 
   def delete
   end
+
+  def register
+    render "register"
+  end
 end
 
