@@ -5,13 +5,33 @@
 
 = form_tag register_page_path, :method => :get do
 
+  %div
   = label :user, :firstName, 'First Name'
   = text_field :user, :firstName
 
+  %div
   = label :user, :lastName, 'Last Name'
   = text_field :user, :lastName
 
+  %div
   = label :user, :bMail, 'BMail Address'
   = text_field :user, :bMail
 
+  %div
+  = label :user, :BNumber, 'B-Number'
+  = text_field :user, :BNumber
+
+  %div
+  = label :user, :pin, 'Pin Number'
+  = text_field :user, :pin
+
+  %div
+  = label :user, :phoneNumber, 'Phone Number'
+  = text_field :user, :phoneNumber
+
+  %div
+  = label :user, :BUCardNumber, 'BU ID Card Number'
+  = text_field :user, :BUCardNumber
+
+  %div
   = submit_tag 'Register!'
