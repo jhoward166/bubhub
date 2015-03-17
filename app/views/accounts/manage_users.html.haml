@@ -1,0 +1,21 @@
+%h1 MANAGE USERS
+%table
+  %thead
+    %tr
+      %th BU ID
+      %th pin
+      %th First Name
+      %th Last Name
+      %th email
+      %th Created
+      %th Updated
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td=user.bu_id
+        %td=user.pin
+        %td=user.first_name
+        %td=user.last_name
+        %td=user.email
+        %td=user.created_at
+        %td=user.updated_at
