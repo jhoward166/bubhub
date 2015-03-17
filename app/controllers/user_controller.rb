@@ -1,6 +1,13 @@
 class UserController < ApplicationController
   def create
-    render "register"
+
+    unless params[:terms]
+      flash[:notice] = "Need to accept conditions"
+    else
+      flash[:notice] = 'yay'
+    end
+    redirect_to root_page_path
+
   end
 
   def read

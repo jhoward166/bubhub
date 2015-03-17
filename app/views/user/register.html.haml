@@ -3,7 +3,7 @@
 
 %h1 Register with Bikeshare
 
-= form_tag register_page_path, :method => :get do
+= form_tag new_user_page_path, :method => :post, :action => "create" do
 
   %div
   = label :user, :firstName, 'First Name'
@@ -71,4 +71,4 @@
   =label :terms, 'I Accept'
 
   %div
-  = submit_tag 'Register!'
+  =submit_tag "Register", :controller => "user", :action => "create", :method => "put"
