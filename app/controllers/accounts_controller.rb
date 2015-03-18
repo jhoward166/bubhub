@@ -4,6 +4,12 @@ class AccountsController < ApplicationController
     @users = User.all
     render
   end
+  def edit
+    @user = User.find(params[:id])
+	@user.update_attributes!(params[:user])
+    flash[:notice] = "success"
+    redirect_to manage_users_page_path
+  end
   def manage_account
     #@hilite = "alter_user"
     @user = User.find(params[:id])
