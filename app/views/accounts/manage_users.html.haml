@@ -21,4 +21,4 @@
         %td=user.created_at
         %td=user.updated_at
         %td
-          =link_to "Edit", manage_account_path(user.id)
+          =link_to "Edit", manage_account_page_path(user.id), :method => :get
