@@ -5,9 +5,13 @@ class AccountsController < ApplicationController
     render
   end
   def update
-    @user = User.find(params[:user].id)
-	@user.update_attributes!(params[:user])
-    flash[:notice] = "success"
+    @user = User.find(params[:id])
+	tester = @user.update_attributes!(params[:user].permit(:bu_id, :pin, :first_name, :last_name, :email, :updated_at))
+    if(!tester)
+      flash[:notice] = "success"
+    else
+      flash[:warning] = "failure"
+    end
     redirect_to manage_users_page_path
   end
   def manage_account

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/how_it_works', to: "welcome#how_it_works", as: :how_it_works_page
   get '/manage_users', to: "accounts#manage_users", as: :manage_users_page
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
-  put '/update_user/:user', to: "account#update", as: :update_user
+  put '/update_user/:id', to: "accounts#update", as: :update_user
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -15,10 +15,8 @@
   =label :user, :email, "Email"
   =text_field :user, 'email'
   %br
-  =label :user, :created_at, "Created On"
-  =text_field :user, 'created_at'
+  =label :user, :created_at, "Created On: #{@user.created_at}"
   %br
-  =label :user, :updated_at, "Updated On"
-  =text_field :user, 'updated_at'
+  =label :user, :updated_at, "Updated On: #{@user.updated_at}"
   %br
   = submit_tag 'Update User Info'
