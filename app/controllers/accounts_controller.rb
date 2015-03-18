@@ -6,11 +6,11 @@ class AccountsController < ApplicationController
   end
   def update
     @user = User.find(params[:id])
-	tester = @user.update_attributes!(params[:user].permit(:bu_id, :pin, :first_name, :last_name, :email, :updated_at))
+	tester = @user.update_attributes!(params[:user].permit(:bu_id, :pin, :first_name, :last_name, :email, :updated_at, :access_level))
     if(tester)
-      flash[:notice] = params[:access_level]
+      flash[:notice] = "User #{@user.first_name} #{@user.last_name}'s account information was successfully changed."
     else
-      flash[:warning] = "Failure"
+      "An error occured and changes to user #{@user.first_name} #{@user.last_name}'s account information were not saved to the database."
     end
     redirect_to manage_users_page_path
   end

@@ -8,6 +8,7 @@
       %th pin
       %th First Name
       %th Last Name
+      %th Access Level
       %th email
       %th Created
       %th Updated
@@ -19,8 +20,9 @@
         %td=user.pin
         %td=user.first_name
         %td=user.last_name
+        %td=user.access_level
         %td=user.email
         %td=user.created_at
         %td=user.updated_at
         %td
-          =link_to "Edit", manage_account_page_path(user.id), :method => :get
+          =button_to "Edit", manage_account_page_path(user.id), :method => :get
