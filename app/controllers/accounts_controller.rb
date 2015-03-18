@@ -4,8 +4,8 @@ class AccountsController < ApplicationController
     @users = User.all
     render
   end
-  def edit
-    @user = User.find(params[:id])
+  def update
+    @user = User.find(params[:user].id)
 	@user.update_attributes!(params[:user])
     flash[:notice] = "success"
     redirect_to manage_users_page_path
