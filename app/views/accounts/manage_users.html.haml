@@ -9,6 +9,7 @@
       %th email
       %th Created
       %th Updated
+      %th Edit
   %tbody
     - @users.each do |user|
       %tr
@@ -19,3 +20,5 @@
         %td=user.email
         %td=user.created_at
         %td=user.updated_at
+        %td
+          =link_to "Edit", manage_account_path(user.id)

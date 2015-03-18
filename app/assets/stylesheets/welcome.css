@@ -2,3 +2,12 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+table{
+  background-color: lightgreen;
+}
+th{
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+}

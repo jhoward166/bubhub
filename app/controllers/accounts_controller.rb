@@ -4,4 +4,9 @@ class AccountsController < ApplicationController
     @users = User.all
     render
   end
+  def manage_account
+    #@hilite = "alter_user"
+    @user = User.find(params[:id])
+    render
+  end
 end
