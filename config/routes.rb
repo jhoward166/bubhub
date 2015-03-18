@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get '/bike_shop_info', to: 'welcome#bike_shop_info', as: :bike_shop_info_page
   get '/how_it_works', to: "welcome#how_it_works", as: :how_it_works_page
 
-  #why won't you work!?
   get '/register', to: "user#register", as: :register_page
 	post '/', to: "user#create", as: :new_user_page  
 	# Example of regular route:
