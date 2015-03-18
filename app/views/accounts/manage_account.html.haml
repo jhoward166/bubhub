@@ -1,5 +1,5 @@
 %h1 Edit User
-= form_tag edit_user(@user), :method => :put do
+= form_tag edit_user_path(@user), :method => :put do
   =label :user, :bu_id, "BU ID #"
   =text_field :user, 'bu_id'
   %br
