@@ -16,7 +16,7 @@
   =text_field :user, 'email'
   %br
   =label :user, :access_level, "Access Level: "
-  =select(:user,:access_level, options_for_select([['Administrator', 1],['Machanic', 2],['User', 3]], @user.access_level))
+  =select(:user,:access_level, options_for_select([['Administrator', 1],['Mechanic', 2],['User', 3]], @user.access_level))
   %br
   =label :user, :created_at, "Created On: #{@user.created_at}"
   %br
