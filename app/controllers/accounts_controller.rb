@@ -7,10 +7,10 @@ class AccountsController < ApplicationController
   def update
     @user = User.find(params[:id])
 	tester = @user.update_attributes!(params[:user].permit(:bu_id, :pin, :first_name, :last_name, :email, :updated_at))
-    if(!tester)
-      flash[:notice] = "success"
+    if(tester)
+      flash[:notice] = params[:access_level]
     else
-      flash[:warning] = "failure"
+      flash[:warning] = "Failure"
     end
     redirect_to manage_users_page_path
   end

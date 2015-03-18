@@ -15,6 +15,12 @@
   =label :user, :email, "Email"
   =text_field :user, 'email'
   %br
+  =label :user, "Access Level: "
+  %select{:name => 'access level'}
+    %option{:value => 1}= "Administrator"
+    %option{:value => 2}= "Mechanic"
+    %option{:value => 3}= "User"
+  %br
   =label :user, :created_at, "Created On: #{@user.created_at}"
   %br
   =label :user, :updated_at, "Updated On: #{@user.updated_at}"
