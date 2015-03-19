@@ -11,26 +11,10 @@ body{
         clear: both;
     }
 
+.register{
+  visibility: hidden;
+}
 
-.control:checked ~ .conditional,
- 	#option:checked ~.condtional {
-  	  clip: auto;
-	  height: auto;
-          margin: 0;
-          overflow: visible;
-          position: static;
-          width: auto;
-
-     }
-
-	 .control:not(:checked) ~ .conditional,
-          	#option:not(:checked) ~ .conditonal {
- 		  border: 0;
- 		  clip: rect(0 0 0 0);
-                  height: 1px;
-		  margin: -1px;
-                  overflow: hidden;
-   	          padding: 0;
-                  position: absolute;
-                  width: 1px;
- 		}
+.check-with-label:checked ~ .register{
+  visibility: visible;
+}

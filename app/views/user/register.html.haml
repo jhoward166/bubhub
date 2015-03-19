@@ -69,9 +69,8 @@
     %br
     Article 2. Cyclist hereby acknowledges and agrees that Binghamton University is not responsible for the condition of the equipment; therefore, cyclist’s acceptance of the equipment on an “as is” basis. Binghamton University hereby disclaims any and all expressed and implied warranties, including without limitation those of fitness for intended use, and Binghamton University shall not be liable for consequential, incidental or indirect damages caused by the equipment of cyclist’s use thereof.
   
-  
-  .control
-    =check_box_tag :terms, :style => "float:left;"
+    %div 
     =label :terms, 'I Accept'
-    %fieldset{:class => "conditional"}
-      =submit_tag "Register", :controller => "user", :action => "create", :method => "put",:id => "option"
+    =check_box_tag :terms, :style => "float:left;"
+    %div
+    =submit_tag "Register", :controller => "user", :action => "create", :method => "put",:class => "register"
