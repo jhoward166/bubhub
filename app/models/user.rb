@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
 
-  validates :terms, acceptance: true
+  attr_accessor :firstName, :lastName, :bMail, :BNumber, :pin, :phoneNumber, :BUCardNumber
 
 end
