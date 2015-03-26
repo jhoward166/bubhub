@@ -3,9 +3,13 @@
 
 %h1 Register with Bikeshare
 
+%div
+  -if flash[:error]
+    =flash[:error]
+
 All fields are required. Please make sure to complete all fields.
 
-= form_tag new_user_page_path, :method => :post, :action => "create" do
+= form_tag new_user_page_path, :method => :post, :action => "create"
 
   .text
     %br 
@@ -30,7 +34,7 @@ All fields are required. Please make sure to complete all fields.
 
     %br
       = label :user, :phoneNumber, 'Phone Number'
-      = text_field :user, :phoneNumber
+      = telephone_field :user, :phoneNumber
 
     %br
       = label :user, :BUCardNumber, 'BU ID Card Number'
