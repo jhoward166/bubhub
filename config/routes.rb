@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/how_it_works', to: "welcome#how_it_works", as: :how_it_works_page
 
   get '/register', to: "user#register", as: :register_page
-	post '/', to: "user#create", as: :new_user_page  
+	post '/register', to: "user#create", as: :new_user_page  
 	# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

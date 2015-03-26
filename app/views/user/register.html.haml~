@@ -3,6 +3,8 @@
 
 %h1 Register with Bikeshare
 
+All fields are required. Please make sure to complete all fields.
+
 = form_tag new_user_page_path, :method => :post, :action => "create" do
 
   .text
@@ -16,7 +18,7 @@
 
     %br
       = label :user, :bMail, 'BMail Address'
-      = text_field :user, :bMail
+      = email_field :user, :bMail
 
     %br
       = label :user, :BNumber, 'B-Number'
@@ -69,9 +71,8 @@
     %br
     Article 2. Cyclist hereby acknowledges and agrees that Binghamton University is not responsible for the condition of the equipment; therefore, cyclist’s acceptance of the equipment on an “as is” basis. Binghamton University hereby disclaims any and all expressed and implied warranties, including without limitation those of fitness for intended use, and Binghamton University shall not be liable for consequential, incidental or indirect damages caused by the equipment of cyclist’s use thereof.
   
-  
-  .control
+    %div 
     =check_box_tag :terms, :style => "float:left;"
     =label :terms, 'I Accept'
-    %fieldset{:class => "conditional"}
-    =submit_tag "Register", :controller => "user", :action => "create", :method => "put",:id => "option"
+    %div
+    =submit_tag "Register", :controller => "user", :action => "create", :method => "put",:class => "register"
