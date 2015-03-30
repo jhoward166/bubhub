@@ -7,7 +7,7 @@ class UserController < ApplicationController
         flash[:error]= "Please fill in all required fields."
         redirect_to register_page_path and return
     else
-      @user = User.create(user_params)
+      @user = User.create!(user_params)
       flash[:notice] = " An account for #{@user.firstName} #{@user.lastName} was successfully created"
       redirect_to root_page_path and return
     end
