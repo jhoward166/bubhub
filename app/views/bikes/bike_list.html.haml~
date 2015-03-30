@@ -3,7 +3,7 @@
 %h1 All bikes
 %p=flash[:notice]
 %p=flash[:warning]
-%table#bikes
+%table class="table table-bordered"
 	%thead
 		%tr
 			%th Bike Id
