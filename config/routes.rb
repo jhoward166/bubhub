@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   get '/resources', to: 'welcome#resources', as: :resources_page
   get '/bike_shop_info', to: 'welcome#bike_shop_info', as: :bike_shop_info_page
   get '/how_it_works', to: "welcome#how_it_works", as: :how_it_works_page
+  get "/bike_list", to: "bikes#bike_list", as: :bike_list_page
   get '/manage_users', to: "accounts#manage_users", as: :manage_users_page
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
   put '/update_user/:id', to: "accounts#update", as: :update_user
-  # Example of regular route:
+# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

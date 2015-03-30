@@ -1,0 +1,16 @@
+.container-fluid
+	#Contact_us_page
+		%h1 All bikes
+%table#bikes
+	%thead
+		%tr
+			%th bike id
+			%th location
+			%th button here
+	%tbody
+		- @bikes.each do |bike|
+			%tr
+				%td= bike.bike_id
+				%td= bike.location_id
+				%td 
+					=button_to "Edit", manage_account_page_path(user.id), :method => :get
