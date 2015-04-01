@@ -1,18 +1,19 @@
-=render 'navbar'
 .container-fluid
 %h1 All bikes
 %p=flash[:notice]
 %p=flash[:warning]
-<!-- TODO: change table to bootstrap table -->
+<!-- TODO: change table to bootstrap table because this one looks bad -->
 %table#bikes
 	%thead
 		%tr
 			%th Bike Id
 			%th Location
-			%th 
+			%th Height
+			%th
 	%tbody
 		- @bikes.each do |bike|
 			%tr
 				%td= bike.bike_id
 				%td= bike.location_id
+				%td= bike.bike_height
 				%td= button_to "Bike Page"

@@ -1,20 +1,16 @@
 class BikesController < ApplicationController
 
 	def bike_list
-    		@hilite = "bike_list"
 		@bikes = Bike.all
 		render
 	end
 
 	def create
-		if not (params[:bike][:bike_id].present?)
-			flash[:error]= "Please fill in all required fields."
-			redirect_to bike_list_page_path and return
-		else
-			@newbike = Bike.create(bike_params)
-			flash[:notice] = "Bike with id #{@newbike.bike_id} created"
-			redirect_to bike_list_page_path and return
-		end
+
+		@bike = Bike.create!(params[:bike_id])
+		flash[:notice] = "Bike with id #{@bike.bike_id} created"
+		redirect_to bike_list_page_path and return
+
 	end
 
 	def update
@@ -28,4 +24,8 @@ class BikesController < ApplicationController
 		redirect_to bike_list_page_path
 	end
 
+
+	def creation_params
+		params.require(:bikes).permit(:bike_id)
+	end
 end

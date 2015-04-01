@@ -1,18 +1,24 @@
-=render 'navbar'
 .container-fluid
-= form_tag bike_management_page_path, :method => :post, :action => "create" do
-	%h2 Add bike
-	= label :bike, :bike_id, 'id#'
+%h2 Add bike
+= form_tag bike_add_page_path, :method => :post, :action => "create" do 
+	= label :bike, :bike_id, 'id'
 	= text_field :bike, :bike_id
-	=submit_tag "Create", :controller => "bike", :action => "create", :method => "put",:class => "bike_mangement"
-
-	%h2 Manual bike move
-	= label :bike, :bike_id, 'id#'
-	= text_field :bike, :bike_id
+	*
 	%br
-	= label :bike, :location_id, 'location id'
-	= text_field :bike, :location_id
-	=submit_tag "Update", :controller => "bike", :action => "update", :method => "put",:class => "bike_mangement"
+	= label :bike, :bike_serial_num, 'serial #'
+	= text_field :bike, :bike_serial_num
+	*
+	%br
+	= label :bike, :bike_height, 'height (in)'
+	= text_field :bike, :bike_height
+	*
+	%br
+	= label :bike, :bike_description, 'description'
+	= text_field :bike, :bike_description
+	%br
+	=submit_tag "Create", :controller => "bike", :action => "create", :method => "put", :class => "bike_add"
+
+
 %br 
 %br 
 %br 
