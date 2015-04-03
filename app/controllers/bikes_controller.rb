@@ -24,7 +24,7 @@ class BikesController < ApplicationController
 		'''
 
 		if(valid)
-			@bike = Bike.create!(bike_params)
+			@bike = Bike.create(bike_params)
 			flash[:notice] = "Bike with id #{@bike.bike_id} created"
 			redirect_to bike_list_page_path and return
 		else

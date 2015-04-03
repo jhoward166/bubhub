@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318054000) do
+ActiveRecord::Schema.define(version: 20150403214328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20150318054000) do
     t.string   "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "bike_serial_num",  limit: nil
+    t.string   "bike_height",      limit: nil
+    t.string   "bike_description", limit: nil
   end
 
   create_table "transactions", force: true do |t|
