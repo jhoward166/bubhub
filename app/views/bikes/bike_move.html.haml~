@@ -1,6 +1,7 @@
 .container-fluid
 %h2 Move bike
 = form_tag bike_moved_page_path, :method => :post, :action => "move" do
+	%h3 Bike:
 	%br 
 	= label :bike, :bike_id, 'id'
 	= text_field :bike, :bike_id

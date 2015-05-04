@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get "/bike_edit", to: "bikes#bike_edit", as: :bike_edit_page
     post '/bike_edit', to: "bikes#update", as: :bike_edited_page
   get "/bike_move", to: "bikes#bike_move", as: :bike_move_page
-    post "/bike_move", to: "bikes#update", as: :bike_moved_page
+    post "/bike_move", to: "bikes#move", as: :bike_moved_page
   get "/bike_remove", to: "bikes#bike_remove" , as: :bike_remove_page
     post "/bike_remove", to: "bikes#destroy", as: :bike_removed_page
   get "/bike_look_up", to: "bikes#bike_look_up", as: :bike_look_up_page

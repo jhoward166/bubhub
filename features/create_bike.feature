@@ -4,16 +4,19 @@ Feature:
   I want to add a bike
 
 Background:
-  Given I am on /bikes/bike_management
+  Given I am on /bike_management
 
 Scenario: User fills in required fields
   When I fill out the form with:
   | bike_bike_id | 10 |
   | bike_bike_serial_num | 1234-456-789-1337 |
   | bike_bike_height | 44 |
-Then I should see "Available bikes"
+  And I press "Create"
+  Then I should be on /bike_list
+  
 
-Scenario: User fills in registration form and accepts terms and conditions
-When I fill out the form with:
-| bike_bike_description | gold frame, gold chain, gold errythang |
-Then I should see "Please fill in all fields marked with a *."
+Scenario: Reqired fields not filled
+  When I fill out the form with:
+  | bike_bike_description | gold frame, gold chain, gold errythang |
+  And I press "Create"
+  Then I should see "Please fill in all fields marked"

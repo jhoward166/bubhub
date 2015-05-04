@@ -8,7 +8,6 @@
 	*
 	%br
 	%h3 Details:
-	
 	%br
 	= label :bike, :newID, 'new id'
 	= text_field :bike, :newID
