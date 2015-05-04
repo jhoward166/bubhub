@@ -1,0 +1,20 @@
+Feature:
+  As an Admin
+  To populate the database
+  I want to add a bike
+
+Background:
+  Given I am on /bike_move
+
+
+Scenario: required feilds not filled
+  When I fill out the form with:
+  | bike_location | 56 |
+  And I press "Move"
+  Then I should see "Bike id not entered"
+
+Scenario: bike doesn't exist
+  When I fill out the form with:
+  | bike_bike_id | thisistheidofabikenotinthedatabaseplsdontusethisstring |
+  And I press "Move"
+  Then I should see "Bike not found."

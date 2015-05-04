@@ -39,6 +39,8 @@ class BikesController < ApplicationController
 		if(params[:bike][:bike_id].present?)
 			@bike = Bike.find_by bike_id: params[:bike][:bike_id]
 
+
+			'''
 			if(params[:bike][:location_id].present? && !(@bike.nil?))
 				#@bike.location_id= params[:bike][:location_id]
 				@bike.update_attribute(:location_id, params[:bike][:location_id])
@@ -47,6 +49,9 @@ class BikesController < ApplicationController
 				flash[:error] = "Bike not found."
 				redirect_to bike_move_page_path and return
 			end
+			'''
+
+	
 
 			if(@bike.nil?)
 				flash[:error] = "Bike not found."
@@ -55,6 +60,10 @@ class BikesController < ApplicationController
 
 			if(params[:bike][:newID].present?)
 				@bike.update_attribute(:bike_id, params[:bike][:newID])
+			end
+
+			if(params[:bike][:newLocation].present?)
+				@bike.update_attribute(:location_id, params[:bike][:newLocation])
 			end
 
 			if(params[:bike][:bike_serial_num].present?)
@@ -70,7 +79,9 @@ class BikesController < ApplicationController
 			end
 
 		else
-			flash[:error] = "Bike id not entered."	
+			
+			flash[:error] = "Please fill in all fields marked with a *."
+			redirect_to bike_edit_page_path and return	
 		end
 		
 		
@@ -112,3 +123,4 @@ class BikesController < ApplicationController
 end
 
 		
+

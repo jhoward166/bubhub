@@ -1,35 +1,28 @@
-<<<<<<< HEAD
-=render 'navbar'
 .container-fluid
-%h1 All bikes
-%p=flash[:notice]
-%p=flash[:warning]
-<!-- TODO: change table to bootstrap table because this one looks bad-->
+%h1 Available bikes
+<!-- TODO: change table to bootstrap table because this one looks bad -->
+<!-- TODO: once locations are properly implemented have a seprate location for each table-->
 %table#bikes
 	%thead
 		%tr
 			%th Bike Id
 			%th Location
-			%th 
-=======
-.container-fluid
-	#Contact_us_page
-		%h1 All bikes
-%table#bikes
-	%thead
-		%tr
-			%th bike id
-			%th location
-			%th button here
->>>>>>> dad788c548a380dfef51bd9d82ce27956b654f71
+			%th Height
+			%th
 	%tbody
 		- @bikes.each do |bike|
-			%tr
-				%td= bike.bike_id
-				%td= bike.location_id
-<<<<<<< HEAD
-				%td= button_to "Bike Page"
-=======
-				%td 
-					=button_to "Edit", manage_account_page_path(user.id), :method => :get
->>>>>>> dad788c548a380dfef51bd9d82ce27956b654f71
+			-if (bike.location_id != "0" && bike.location_id != "-1")
+				%tr
+					%td= bike.bike_id
+					%td= bike.location_id
+					%td= bike.bike_height
+					%td= button_to "Bike Page"
+<!-- TODO: blanket true to be replaced with admin detection -->
+-if(true)
+	%br
+	%br
+	%b Admin Panel
+	%br
+	%td= button_to "Add", bike_management_page_path, :class => "button", :method => :get
+	%td= button_to "Edit", bike_edit_page_path, :class => "button", :method => :get
+	%td= button_to "Remove", bike_remove_page_path, :class => "button", :method => :get
